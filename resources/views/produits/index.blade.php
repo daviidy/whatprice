@@ -64,6 +64,9 @@
       </div>
       @endforeach
 
+      @elseif(isset($message))
+      <p>{{ $message }}</p>
+
       @else
 
       <div class="row">

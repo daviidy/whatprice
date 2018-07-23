@@ -24,7 +24,7 @@ class SearchController extends Controller
                     }
     }
 
-    return view('produits.index')->withMessage("Aucun utilisateur trouvé !");
+    return view('produits.index')->withMessage("Aucun produit trouvé !");
 
   }
 
