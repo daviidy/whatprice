@@ -176,7 +176,11 @@
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
+            @if ($loop->iteration == 1)
+            <div class="probootstrap-listing-category for-sale">
+              <span>Le moins cher !</span>
+            </div>
+            @endif
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
