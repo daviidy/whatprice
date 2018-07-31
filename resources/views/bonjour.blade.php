@@ -176,7 +176,7 @@
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
             </div>
-            @if ($loop->first)
+            @if ($loop->parent->first)
             <div class="probootstrap-listing-category for-sale">
               <span>Le moins cher !</span>
             </div>
