@@ -11,6 +11,17 @@ use Illuminate\Http\Request;
 
 class ProduitController extends Controller
 {
+
+    public function home()
+    {
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+      return view('bonjour', ['produits' => $produits]);
+
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      *

@@ -25,6 +25,7 @@
 
     <div class="row">
       @foreach($details as $produit)
+        @foreach($produit->magasins as $magasin)
       <div class="col-md-4 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
@@ -42,26 +43,23 @@
           <div class="probootstrap-card-extra">
             <ul>
               <li>
-                Area
-                <span>2400 m2</span>
+                {{$magasin->nom_magasin}}
+                <span>Magasin</span>
               </li>
               <li>
-                Beds
-                <span>3</span>
+                {{$magasin->localisation}}
+                <span>Lieu</span>
               </li>
               <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
+                {{$magasin->contact}}
+                <span>Contact</span>
               </li>
             </ul>
           </div>
         </div>
         <!-- END listing -->
       </div>
+        @endforeach
       @endforeach
 
       @elseif(isset($message))
@@ -71,6 +69,7 @@
 
       <div class="row">
         @foreach($produits as $produit)
+          @foreach($produit->magasins as $magasin)
         <div class="col-md-4 col-sm-6">
           <div class="probootstrap-card probootstrap-listing">
             <div class="probootstrap-card-media">
@@ -88,26 +87,23 @@
             <div class="probootstrap-card-extra">
               <ul>
                 <li>
-                  Area
-                  <span>2400 m2</span>
+                  {{$magasin->nom_magasin}}
+                  <span>Magasin</span>
                 </li>
                 <li>
-                  Beds
-                  <span>3</span>
+                  {{$magasin->localisation}}
+                  <span>Lieu</span>
                 </li>
                 <li>
-                  Baths
-                  <span>2</span>
-                </li>
-                <li>
-                  Garages
-                  <span>1</span>
+                  {{$magasin->contact}}
+                  <span>Contact</span>
                 </li>
               </ul>
             </div>
           </div>
           <!-- END listing -->
         </div>
+          @endforeach
         @endforeach
 
         @endif

@@ -96,7 +96,7 @@
     <div class="row probootstrap-gutter10">
       <div class="col-md-6 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="haus/img/slider_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/smartphone1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>New York</h3>
             <p>430 Properties</p>
@@ -105,7 +105,7 @@
       </div>
       <div class="col-md-6 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="haus/img/slider_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/smartphone2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>San Francisco</h3>
             <p>294 Properties</p>
@@ -116,7 +116,7 @@
 
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="haus/img/slider_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/smartphone3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Brooklyn</h3>
             <p>300 Properties</p>
@@ -125,7 +125,7 @@
       </div>
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="haus/img/slider_4.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/smartphone4.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Chicago</h3>
             <p>268 Properties</p>
@@ -135,7 +135,7 @@
       <div class="clearfix visible-sm-block"></div>
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="haus/img/slider_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/products.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Los Angeles</h3>
             <p>342 Properties</p>
@@ -148,7 +148,7 @@
 </section>
 <!-- END: section -->
 
-<section class="probootstrap-section probootstrap-bg" style="background-image: url(img/slider_2.jpg);">
+<section class="probootstrap-section probootstrap-bg" style="background-image: url(/img/products.jpg);">
   <div class="container text-center probootstrap-animate" data-animate-effect="fadeIn">
     <h2 class="heading">Best Home &amp; Properties</h2>
     <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -163,231 +163,46 @@
       <h2 class="mt0 mb50 text-center">Featured Listing</h2>
     </div>
     <div class="row">
+      @foreach($produits as $produit)
+        @foreach($produit->magasins as $magasin)
       <div class="col-md-4 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
-            <img src="haus/img/slider_1.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+            <img src="/img/photos/{{$produit->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
+            <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
+              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale"><span>for sale</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 1,121,000</strong> / month</div>
+            <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
+            <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
             <ul>
               <li>
-                Area
-                <span>2400 m2</span>
+                {{$magasin->nom_magasin}}
+                <span>Magasin</span>
               </li>
               <li>
-                Beds
-                <span>3</span>
+                {{$magasin->localisation}}
+                <span>Lieu</span>
               </li>
               <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
+                {{$magasin->contact}}
+                <span>Contact</span>
               </li>
             </ul>
           </div>
         </div>
         <!-- END listing -->
       </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="probootstrap-card probootstrap-listing">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/slider_2.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-            <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
-            <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
-            </div>
-            <div class="probootstrap-listing-category for-sale"><span>for sale</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 250,000</strong> / month</div>
-          </div>
-          <div class="probootstrap-card-extra">
-            <ul>
-              <li>
-                Area
-                <span>2400 m2</span>
-              </li>
-              <li>
-                Beds
-                <span>3</span>
-              </li>
-              <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- END listing -->
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-md-4 col-sm-6">
-        <div class="probootstrap-card probootstrap-listing">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/slider_3.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-            <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
-            <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
-            </div>
-            <div class="probootstrap-listing-category for-rent"><span>for rent</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 60,000</strong> / month</div>
-          </div>
-          <div class="probootstrap-card-extra">
-            <ul>
-              <li>
-                Area
-                <span>2400 m2</span>
-              </li>
-              <li>
-                Beds
-                <span>3</span>
-              </li>
-              <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- END listing -->
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="probootstrap-card probootstrap-listing">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/slider_4.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-            <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
-            <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
-            </div>
-            <div class="probootstrap-listing-category for-sale"><span>for sale</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 125,000</strong> / month</div>
-          </div>
-          <div class="probootstrap-card-extra">
-            <ul>
-              <li>
-                Area
-                <span>2400 m2</span>
-              </li>
-              <li>
-                Beds
-                <span>3</span>
-              </li>
-              <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- END listing -->
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-md-4 col-sm-6">
-        <div class="probootstrap-card probootstrap-listing">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/slider_2.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-            <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
-            <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
-            </div>
-            <div class="probootstrap-listing-category for-sale"><span>for sale</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 125,000</strong> / month</div>
-          </div>
-          <div class="probootstrap-card-extra">
-            <ul>
-              <li>
-                Area
-                <span>2400 m2</span>
-              </li>
-              <li>
-                Beds
-                <span>3</span>
-              </li>
-              <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- END listing -->
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="probootstrap-card probootstrap-listing">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/slider_1.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-            <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">3 Bed Room Property for Sale</a></h2>
-            <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
-            </div>
-            <div class="probootstrap-listing-category for-sale"><span>for sale</span></div>
-            <div class="probootstrap-listing-price"><strong>$ 125,000</strong> / month</div>
-          </div>
-          <div class="probootstrap-card-extra">
-            <ul>
-              <li>
-                Area
-                <span>2400 m2</span>
-              </li>
-              <li>
-                Beds
-                <span>3</span>
-              </li>
-              <li>
-                Baths
-                <span>2</span>
-              </li>
-              <li>
-                Garages
-                <span>1</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- END listing -->
-      </div>
-    </div>
+        @endforeach
+      @endforeach
+  </div>
+
+
   </div>
 </section>
 

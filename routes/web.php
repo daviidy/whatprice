@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('bonjour');
-})->name('home');
+Route::get('/', 'ProduitController@home')->name('home');
 
 Route::get('/contact', function () {
     return view('bonjour');
