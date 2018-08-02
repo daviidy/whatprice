@@ -7642,3 +7642,31 @@ a.pswp__share--download:hover {
 
 .pswp--minimal--dark .pswp__top-bar {
   background: none; }
+
+
+/* menu like scoth.io */
+  .background-angular{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 2px;
+    margin-right: 3px;
+    background: #e03237!important;
+    color: #fff!important;
+    transition: all .3s ease;
+  }
+
+  .background-react{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 2px;
+    margin-right: 3px;
+    background: #33E0FF!important;
+    color: #fff!important;
+    transition: all .3s ease;
+  }
+
+  .dropdown-menu{
+    padding: 12px;
+  }

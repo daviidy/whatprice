@@ -43,8 +43,17 @@
                 Produits
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('produits.create') }}">Créer un produit</a><br>
+                @guest
+                <span class="background-angular"></span>
                 <a class="dropdown-item" href="{{ route('produits.index') }}">Voir la liste des produits</a>
+                @else
+                @if (Auth::user()->isMarchand() || Auth::user()->isAdmin())
+                <span class="background-angular"></span>
+                <a class="dropdown-item" href="{{ route('produits.index') }}">Voir la liste des produits</a><br>
+                <span class="background-react"></span>
+                <a class="dropdown-item" href="{{ route('produits.create') }}">Créer un produit</a>
+                @endif
+                @endguest
               </div>
             </li>
             <li class="dropdown {{ Request::path() == 'magasins.index' ? 'active' : "" }}">
@@ -52,8 +61,17 @@
                 Magasins
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('magasins.create') }}">Créer un magasin</a><br>
+                @guest
+                <span class="background-angular"></span>
                 <a class="dropdown-item" href="{{ route('magasins.index') }}">Voir la liste des magasins</a>
+                @else
+                @if (Auth::user()->isAdmin())
+                <span class="background-angular"></span>
+                <a class="dropdown-item" href="{{ route('magasins.index') }}">Voir la liste des magasins</a><br>
+                <span class="background-react"></span>
+                <a class="dropdown-item" href="{{ route('magasins.create') }}">Créer un magasin</a>
+                @endif
+                @endguest
               </div>
             </li>
             <li class="dropdown {{ Request::path() == 'categories.index' ? 'active' : "" }}">
@@ -65,7 +83,33 @@
                 <a class="dropdown-item" href="{{ route('categories.index') }}">Voir la liste des catégories</a>
               </div>
             </li>
-            <li class="{{ Request::path() == 'contact' ? 'active' : "" }}"><a href="/contact">Travaillez avec nous</a></li>
+            <li class="{{ Request::path() == 'contact' ? 'active' : "" }}"><a href="#">Travaillez avec nous</a></li>
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                </li>
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Se déconnecter') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
           </ul>
           <div class="extra-text visible-xs">
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>

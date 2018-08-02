@@ -22,3 +22,15 @@ Route::resource('categories','CategorieController');
 Route::resource('magasins','MagasinController');
 
 Route::post('/searchProduit', 'SearchController@searchProduit');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@admin')
+    ->middleware('is_admin')
+    ->name('admin');
+
+Route::get('/marchand', 'MarchandController@marchand')
+    ->middleware('is_marchand')
+    ->name('marchand');
