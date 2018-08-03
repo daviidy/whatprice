@@ -4,12 +4,12 @@
 
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
-    <h1 class="text-center" style="margin-top: 3rem;">Liste de </h1><br>
+    <h1 class="text-center" style="margin-top: 3rem;">Produits</h1><br>
            <div id="custom-search-input">
              <form action="/searchProduit" method="POST" role="search">
                {{ csrf_field() }}
               <div class="input-group col-md-12">
-                  <input type="text" name="q" class="  search-query form-control" placeholder="Chercher un produit" />
+                  <input type="text" name="q" class="search-query form-control" placeholder="Chercher un produit" />
                   <span class="input-group-btn">
                       <button type="submit" class="btn btn-danger" type="button">
                           <span class=" fa fa-search"></span>
@@ -35,9 +35,13 @@
           <div class="probootstrap-card-text">
             <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+              <img src="/img/facture.png" style="width: 47px; margin-right: 8px; margin-top: -9px;" <span>{{$produit->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
+            <div class="probootstrap-listing-category for-sale">
+              @if ($loop->parent->first)
+              <span >Le moins cher !</span>
+              @endif
+            </div>
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
@@ -81,8 +85,8 @@
               <div class="probootstrap-listing-location">
                 <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
               </div>
-              <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-              <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
+              <div class="probootstrap-listing-category for-sale" style="margin-top: -34px;"><span>Le moins cher !</span></div>
+              <div class="probootstrap-listing-price" style="margin-top: -5px; margin-bottom: -25px;"><strong>{{$produit->prix}} FCFA</strong></div>
             </div>
             <div class="probootstrap-card-extra">
               <ul>

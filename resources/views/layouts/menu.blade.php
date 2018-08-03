@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="haus/css/style.css">
     <link rel="stylesheet" href="haus/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/formcreate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/haus/css/whatprice-accueil/style.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>

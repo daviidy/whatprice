@@ -2,85 +2,54 @@
 
 @section('content')
 
-<section class="probootstrap-slider flexslider">
+
+<link rel="stylesheet" type="text/css" href="/haus/css/whatprice-accueil/default.css">
+    <link rel="stylesheet" type="text/css" href="/haus/css/whatprice-accueil/component.css">
+    <!--Menu-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="/haus/css/whatprice-accueil/style.css">
+
+<section class="probootstrap-slider flexslider" style="background-image: url(img/whatprice-accueil/image111.png); background-position: -249px;"
+}
+
+
+
+
+;" >
+
   <div class="probootstrap-wrap-banner">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" style="width: 95%">
 
-          <div class="probootstrap-home-search probootstrap-animate">
-            <form action="" method="post">
-              <h2 class="heading">Chercher un produit</h2>
-              <div class="probootstrap-field-group">
-                <div class="probootstrap-fields">
-
-                  <div class="search-field">
-                    <i class="icon-location2"></i>
-                    <input type="text" class="form-control" placeholder="Enter address, ZIP code, Neighborhoods">
-                  </div>
-                  <div class="search-category">
-                    <i class="icon-chevron-down"></i>
-                    <select name="#" id="" class="form-control">
-                      <option value="">For Rent</option>
-                      <option value="">For Sale</option>
-                    </select>
-                  </div>
-                </div>
-                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Start Search</button>
-              </div>
+          
+      <div class="main clearfix" style="margin-left: -70px;
+    margin-right: 150px;">
+        <!-- Optional columns for small components -->
+        <div class="column">
+          <div class="logo">
+            <img src="/img/whatprice-accueil/logo_whatprice.png" width="150%">
+            <p style="    color: rgba(0,0,0,.5); font-size: 18px;">Comparateur de prix des Appareils électroniques modernes de communication</p>
+          </div>
+      
+        </div>
+        <div class="column">
+        
+          </div>
+          <div class="research" style="margin-left: -32px;">
+          <div id="sb-search1" class="sb-search1">
+            <form class="sami" action="/searchProduit" method="POST" role="search" style="margin-left: -10%; margin-right: 8%; margin-top: 392px;">
+               {{ csrf_field() }}
+              <input class="sb-search-input1" placeholder="Que cherchez-vous?" type="text" name="q"   style="margin: 55; height: 60px; padding: 10px; width: 93.2%; margin-left: 3%;">
+              <button class="sb-search-submit1" type="submit"  type="button" value="" style="margin: -60px; margin-left: 98%; width: 60px; height: 60; background-color: #2586b5;">
+      <img src="/img/iconerecherche.png" alt="icone" style="margin-top: -5px;
+    width: 28px;"/>
+    </button> 
             </form>
-            <p class="mb0 text-left"><small>A free HTML5 template by <a href="https://uicookies.com/">uicookies.com</a> under license <a href="https://uicookies.com/license">Creative Commons 3.0</a></small> </p>
           </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-  <ul class="slides">
-    <li style="background-image: url(haus/img/slider_1.jpg);" class="overlay"></li>
-    <li style="background-image: url(haus/img/slider_4.jpg);" class="overlay"></li>
-    <li style="background-image: url(haus/img/slider_2.jpg);" class="overlay"></li>
-  </ul>
-</section>
-<!-- END: slider  -->
+        
 
-<section class="probootstrap-section probootstrap-section-lighter">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="probootstrap-card text-center probootstrap-animate">
-          <div class="probootstrap-card-media svg-sm colored">
-            <img src="haus/img/flaticon/svg/001-prize.svg" class="svg" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading">Award Winning Brooker</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="probootstrap-card text-center probootstrap-animate">
-          <div class="probootstrap-card-media svg-sm colored">
-            <img src="haus/img/flaticon/svg/005-new.svg" class="svg" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading">New Houses</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="probootstrap-card text-center  probootstrap-animate">
-          <div class="probootstrap-card-media svg-sm colored">
-            <img src="haus/img/flaticon/svg/006-coin.svg" class="svg" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading">Affordable Houses</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
-          </div>
         </div>
       </div>
     </div>
@@ -150,9 +119,9 @@
 
 <section class="probootstrap-section probootstrap-bg" style="background-image: url(/img/products.jpg);">
   <div class="container text-center probootstrap-animate" data-animate-effect="fadeIn">
-    <h2 class="heading">Best Home &amp; Properties</h2>
-    <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-    <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
+    <h2 class="heading"> Des centaines de Smartphones, Tablettes et Ordinateurs</h2>
+    <p class="sub-heading">Recherchez, Comparez, ...Trouvez.</p>
+    <p><a href="{{ route('produits.index') }}" class="btn btn-primary mb10">Explorer</a></p>
   </div>
 </section>
 <!-- END: section -->
@@ -160,7 +129,7 @@
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
     <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Featured Listing</h2>
+      <h2 class="mt0 mb50 text-center">Quelques produits</h2>
     </div>
     <div class="row">
       @foreach($produits as $produit)
@@ -174,11 +143,11 @@
           <div class="probootstrap-card-text">
             <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+              <img src="/img/facture.png" style="width: 47px; margin-right: 8px; margin-top: -9px;"><span>{{$produit->marque}}</span>
             </div>
             <div class="probootstrap-listing-category for-sale">
               @if ($loop->parent->first)
-              <span>Le moins cher !</span>
+              <span >Le moins cher !</span>
               @endif
             </div>
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
@@ -226,53 +195,37 @@
 <section class="probootstrap-section">
   <div class="container">
     <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Our Services</h2>
+      <h2 class="mt0 mb50 text-center">Nos Catégories de Produits</h2>
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
         <div class="service text-center">
-          <div class="icon"><i class="icon-list2"></i></div>
-          <h2 class="heading">Property Listing</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <div class="icon"><img src="/img/iconephone1.png" style="width: 41px; margin: 8px;"></div>
+          <h2 class="heading">Smartphones</h2>
+          <p>Une panoplie de smartphones de toutes marques des moins chers au plus chers selon les magasins </p>
+          <p><a href="#">Voir les smartphones</a></p>
         </div>
       </div>
+     
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
         <div class="service text-center">
-          <div class="icon"><i class="icon-power-cord"></i></div>
-          <h2 class="heading">Property Management</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <div class="icon"><img src="/img/iconetab1.png" style="width: 47px; margin: 9px;"></div>
+          <h2 class="heading">Tablettes</h2>
+          <p>Toutes les marques de tablettes des plus abordables aux plus onéreuses suivant leur lieu de vente</p>
+          <p><a href="#">Voir les tablettes</a></p>
         </div>
       </div>
+     
       <div class="clearfix visible-sm-block"></div>
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
         <div class="service text-center">
-          <div class="icon"><i class="icon-price-tag2"></i></div>
-          <h2 class="heading">Renting Properties</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <div class="icon"><img src="/img/ordinateur.png" style="width: 52px; margin: 8px;"></div>
+          <h2 class="heading">Ordinateurs</h2>
+          <p>Les ordinateurs de diverses marques partant des prix les plus bas aux plus élevés avec leur point de vente</p>
+          <p><a href="#">Voir les ordinateurs</a></p>
         </div>
       </div>
-      <div class="clearfix visible-lg-block visible-md-block"></div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-        <div class="service text-center">
-          <div class="icon"><i class="icon-direction"></i></div>
-          <h2 class="heading">Selling Properties</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-        <div class="service text-center">
-          <div class="icon"><i class="icon-home3"></i></div>
-          <h2 class="heading">Brook A Property</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-        <div class="service text-center">
-          <div class="icon"><i class="icon-magnifying-glass"></i></div>
-          <h2 class="heading">Search Property</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
+
       </div>
       <div class="clearfix visible-lg-block visible-md-block"></div>
     </div>
@@ -281,62 +234,5 @@
 
 <!-- END: section -->
 
-<section class="probootstrap-section probootstrap-section-lighter">
-  <div class="container">
-    <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Our Agents</h2>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="probootstrap-card probootstrap-person text-left">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/person_1.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading mb0">Jeremy Slater</h2>
-            <p><small>Real Estate Brooker</small></p>
-            <p><a href="#">View Details</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="probootstrap-card probootstrap-person text-left">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/person_2.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading mb0">James Butterly</h2>
-            <p><small>Buying Agent</small></p>
-            <p><a href="#">View Details</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="probootstrap-card probootstrap-person text-left">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/person_3.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading mb0">James Smith</h2>
-            <p><small>Real Estate Brooker</small></p>
-            <p><a href="#">View Details</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="probootstrap-card probootstrap-person text-left">
-          <div class="probootstrap-card-media">
-            <img src="haus/img/person_4.jpg" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading mb0">Chris White</h2>
-            <p><small>Selling Agent</small></p>
-            <p><a href="#">View Details</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 @endsection

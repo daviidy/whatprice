@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<title>@yield('title') | Whatprice</title>
 	<meta charset="UTF-8">
@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="/formcreate/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/formcreate/css/main.css">
 <!--===============================================================================================-->
+<link rel="stylesheet" href="/haus/css/whatprice-accueil/style.css">
 </head>
 <body>
 	@if (session('status'))
