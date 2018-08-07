@@ -14,7 +14,7 @@ class ProduitController extends Controller
 
     public function home()
     {
-      $produits = Produit::orderby ('prix','asc')->paginate(30);
+      $produits = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
       return view('bonjour', ['produits' => $produits]);
 
     }

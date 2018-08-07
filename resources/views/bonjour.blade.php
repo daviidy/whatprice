@@ -204,6 +204,7 @@
       </div>
         @endforeach
       @endforeach
+      {{ $produits->links() }}
   </div>
 
 

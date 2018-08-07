@@ -61,6 +61,7 @@
       </div>
         @endforeach
       @endforeach
+      {{ $produits->links() }}
 
       @elseif(isset($message))
       <p>{{ $message }}</p>
@@ -105,6 +106,7 @@
         </div>
           @endforeach
         @endforeach
+        {{ $produits->links() }}
 
         @endif
 
