@@ -97,7 +97,19 @@
 
 }
 
-
+.sb-icon-search {
+	color: #fff;
+	background: #2586b5;
+	z-index: 90;
+	font-size: 22px;
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	
 }
 .sb-search-submit1:before {
 	content: "\e000";

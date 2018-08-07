@@ -18,7 +18,26 @@ class ProduitController extends Controller
       return view('bonjour', ['produits' => $produits]);
 
     }
+public function smartphone()
+    {
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+      return view('produits.smartphone', ['produits' => $produits]);
 
+    }
+
+ public function tablette()
+    {
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+      return view('produits.index', ['produits' => $produits]);
+
+    }
+
+public function ordinateur()
+    {
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+      return view('produits.index', ['produits' => $produits]);
+
+    }
 
 
 

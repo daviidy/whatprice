@@ -13,6 +13,12 @@
 
 Route::get('/', 'ProduitController@home')->name('home');
 
+Route::get('/smartphone', 'ProduitController@smartphone')->name('smartphone');
+
+Route::get('/tablette', 'ProduitController@tablette')->name('tablette');
+
+Route::get('/ordinateur', 'ProduitController@ordinateur')->name('ordinateur');
+
 Route::get('/contact', function () {
     return view('bonjour');
 })->name('contact');

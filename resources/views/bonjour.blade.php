@@ -41,9 +41,8 @@
             <form class="sami" action="/searchProduit" method="POST" role="search" style="margin-left: -10%; margin-right: 8%; margin-top: 392px;">
                {{ csrf_field() }}
               <input class="sb-search-input1" placeholder="Que cherchez-vous?" type="text" name="q"   style="margin: 55; height: 60px; padding: 10px; width: 93.2%; margin-left: 3%;">
-              <button class="sb-search-submit1" type="submit"  type="button" value="" style="margin: -60px; margin-left: 98%; width: 60px; height: 60; background-color: #2586b5;">
-      <img src="/img/iconerecherche.png" alt="icone" style="margin-top: -5px;
-    width: 28px;"/>
+              <button class="sb-search-submit1" type="submit"  type="button" style="margin: -60px; margin-left: 98%; width: 60px; height: 60; background-color: #2586b5;">
+      <img src="/img/iconerecherche.png" alt="icone" style="margin-top: -10px; width: 28px; position: static; margin-left: -29px;"/>
     </button> 
             </form>
           </div>
@@ -60,57 +59,9 @@
 <section class="probootstrap-section">
   <div class="container">
     <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Explore Our Neighborhoods</h2>
+      <img src="/img/whatprice-accueil/logo_whatprice1.png" class="mt0 mb50 text-center" width="300px">
     </div>
-    <div class="row probootstrap-gutter10">
-      <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>New York</h3>
-            <p>430 Properties</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>San Francisco</h3>
-            <p>294 Properties</p>
-          </div>
-        </a>
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Brooklyn</h3>
-            <p>300 Properties</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone4.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Chicago</h3>
-            <p>268 Properties</p>
-          </div>
-        </a>
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/products.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Los Angeles</h3>
-            <p>342 Properties</p>
-          </div>
-        </a>
-      </div>
+    <p style="color: grey;">Vous ne savez pas où trouver le smartphone, la tablette ou l’ordinateur que vous désirez ? et surtout où vous faire plaisir tout en dépensant moins ? Laissez-nous donc vous inspirez dans votre choix...</p>
 
     </div>
   </div>
@@ -145,11 +96,7 @@
             <div class="probootstrap-listing-location">
               <img src="/img/facture.png" style="width: 47px; margin-right: 8px; margin-top: -9px;"><span>{{$produit->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale">
-              @if ($loop->parent->first)
-              <span >Le moins cher !</span>
-              @endif
-            </div>
+            
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
@@ -184,11 +131,14 @@
     <div class="image" style="background-image: url(haus/img/slider_5.jpg);"></div>
   </div>
   <div class="text">
-    <p class="mb10 subtitle">Why Choose Us</p>
-    <h3 class="mt0 mb40">You Will Love Our Services</h3>
-    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    <p class="mb50">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-    <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
+    <p class="mb10 subtitle" style="color: white">Pourquoi <strong>Whatprice</strong> ?</p>
+    <h3 class="mt0 mb40"> </h3>
+    <p style="color: white">La recherche des Smartphones, Tablettes et ordinateurs de <strong>Whatprice</strong> permet aux utilisateurs de comparer les prix de ces produits en seulement quelques clics afin de déterminer où les trouver et comment contacter leur fournisseur.</p>
+    
+    <p style="color: white"><strong>Whatprice</strong> est utilisé pour comparer des offres dans toutes les grandes surfaces et magasins revendeurs des appareils de communication modernes dans la ville d’Abidjan, Côte d’Ivoire. </p>
+
+
+    <p class="mb50" style="color: white">Obtenir des informations pour le produit que vous désirez acheter et vous pouvez trouver sur <strong>Whatprice</strong> votre appareil et sa localisation rapidement et facilement.</p>
   </div>
 </section>
 
@@ -203,7 +153,7 @@
           <div class="icon"><img src="/img/iconephone1.png" style="width: 41px; margin: 8px;"></div>
           <h2 class="heading">Smartphones</h2>
           <p>Une panoplie de smartphones de toutes marques des moins chers au plus chers selon les magasins </p>
-          <p><a href="#">Voir les smartphones</a></p>
+          <p><a href="/smartphone">Voir les smartphones</a></p>
         </div>
       </div>
      
@@ -212,7 +162,7 @@
           <div class="icon"><img src="/img/iconetab1.png" style="width: 47px; margin: 9px;"></div>
           <h2 class="heading">Tablettes</h2>
           <p>Toutes les marques de tablettes des plus abordables aux plus onéreuses suivant leur lieu de vente</p>
-          <p><a href="#">Voir les tablettes</a></p>
+          <p><a href="/tablette">Voir les tablettes</a></p>
         </div>
       </div>
      
@@ -222,7 +172,9 @@
           <div class="icon"><img src="/img/ordinateur.png" style="width: 52px; margin: 8px;"></div>
           <h2 class="heading">Ordinateurs</h2>
           <p>Les ordinateurs de diverses marques partant des prix les plus bas aux plus élevés avec leur point de vente</p>
-          <p><a href="#">Voir les ordinateurs</a></p>
+          <p>
+            <a href="/ordinateur">Voir les ordinateurs</a>
+          </p>
         </div>
       </div>
 

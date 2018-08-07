@@ -2,6 +2,12 @@
 
 @section('content')
 
+<link rel="stylesheet" type="text/css" href="/haus/css/whatprice-accueil/default.css">
+    <link rel="stylesheet" type="text/css" href="/haus/css/whatprice-accueil/component.css">
+    <!--Menu-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="/haus/css/whatprice-accueil/style.css">
+
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
     <h1 class="text-center" style="margin-top: 3rem;">Produits</h1><br>
@@ -35,7 +41,7 @@
           <div class="probootstrap-card-text">
             <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <img src="/img/facture.png" style="width: 47px; margin-right: 8px; margin-top: -9px;" <span>{{$produit->marque}}</span>
+              <img src="/img/facture.png" style="width: 47px; margin-right: 8px; margin-top: -9px;"><span>{{$produit->marque}}</span>
             </div>
             <div class="probootstrap-listing-category for-sale">
               @if ($loop->parent->first)
@@ -118,8 +124,6 @@
     </div>
   </div>
 </section>
-
-
 
 
 <section class="probootstrap-half reverse">
