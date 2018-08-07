@@ -15,7 +15,9 @@ class ProduitController extends Controller
     public function home()
     {
       $produits = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
-      return view('bonjour', ['produits' => $produits]);
+      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+      return view('bonjour', ['produits' => $produits, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
 
     }
 
@@ -41,9 +43,15 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
-        $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
-        return view('produits.create', ['categories' => $categories, 'magasins' => $magasins]);
+        if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
+          $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
+          $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
+          return view('produits.create', ['categories' => $categories, 'magasins' => $magasins]);
+        }
+        else {
+          return redirect('/');
+        }
+
     }
 
     /**
@@ -84,7 +92,14 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-        return view('produits.show',['produit' => $produit]);
+      if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
+        $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
+        $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
+        return view('produits.show', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins]);
+      }
+      else {
+        return redirect('/');
+      }
     }
 
     /**
@@ -107,20 +122,25 @@ class ProduitController extends Controller
      */
     public function update(Request $request, Produit $produit)
     {
+      $produit->update([
+                        'marque' => $request['marque'],
+                        'serie' => $request['serie'],
+                        'prix' => $request['prix'],
+                        'categorie_id' => $request['categorie_id'],
+                      ]);
 
-       $produit->update($request->all());
+      if($request->hasFile('image')){
+        $image = $request->file('image');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        Image::make($image)->save(public_path('/img/photos/' . $filename));
+        $produit->image = $filename;
+        $produit->save();
+    }
+    $magasin = Magasin::find($request['magasin_id']);
+    $produit->magasins()->attach($magasin);
 
-       if($request->hasFile('image')){
 
-         $image = $request->file('image');
-         $filename = time() . '.' . $image->getClientOriginalExtension();
-         Image::make($image)->save(public_path('/img/photos/' . $filename));
-         $produit->image = $filename;
-         $produit->save();
-
-       }
-
-      return back()->with('status', 'Modifications enregistrées');
+      return back()->with('status', 'Produit modifié avec succès !');
     }
 
     /**

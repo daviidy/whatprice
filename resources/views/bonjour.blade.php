@@ -91,24 +91,24 @@
 <section class="probootstrap-section">
   <div class="container">
     <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Explore Our Neighborhoods</h2>
+      <h2 class="mt0 mb50 text-center">Parcourez nos catégories</h2>
     </div>
     <div class="row probootstrap-gutter10">
       <div class="col-md-6 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
-            <h3>New York</h3>
-            <p>430 Properties</p>
+            <h3>Smartphones</h3>
+            <p>{{$produits->count()}} produits</p>
           </div>
         </a>
       </div>
       <div class="col-md-6 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/tablette.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
-            <h3>San Francisco</h3>
-            <p>294 Properties</p>
+            <h3>Tablettes</h3>
+            <p>{{$tablettes->count()}} produits</p>
           </div>
         </a>
       </div>
@@ -116,29 +116,29 @@
 
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/ordi.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
-            <h3>Brooklyn</h3>
-            <p>300 Properties</p>
+            <h3>Ordinateurs</h3>
+            <p>{{$ordinateurs->count()}} produits</p>
           </div>
         </a>
       </div>
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone4.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/tv.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
-            <h3>Chicago</h3>
-            <p>268 Properties</p>
+            <h3>Télévision</h3>
+            <p>Bientôt disponible</p>
           </div>
         </a>
       </div>
       <div class="clearfix visible-sm-block"></div>
       <div class="col-md-4 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/products.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <img src="/img/electro.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
-            <h3>Los Angeles</h3>
-            <p>342 Properties</p>
+            <h3>Electro-ménagers</h3>
+            <p>Bientôt disponible</p>
           </div>
         </a>
       </div>
@@ -160,12 +160,12 @@
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
     <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Featured Listing</h2>
+      <h2 class="mt0 mb50 text-center">Quel est le smartphone le moins cher ?</h2>
     </div>
     <div class="row">
       @foreach($produits as $produit)
         @foreach($produit->magasins as $magasin)
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
             <img src="/img/photos/{{$produit->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
@@ -175,11 +175,11 @@
             <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
-              <div class="probootstrap-listing-category for-sale">
-                @if ($loop->parent->first)
-                <span>Le moins cher !</span>
-                @endif
-              </div>
+            </div>
+            <div class="probootstrap-listing-category for-sale">
+              @if ($loop->parent->first)
+              <span>Le moins cher !</span>
+              @endif
             </div>
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
@@ -213,11 +213,11 @@
 
 <section class="probootstrap-half reverse">
   <div class="image-wrap">
-    <div class="image" style="background-image: url(haus/img/slider_5.jpg);"></div>
+    <div class="image" style="background-image: url(/img/roi.jpg);"></div>
   </div>
   <div class="text">
-    <p class="mb10 subtitle">Why Choose Us</p>
-    <h3 class="mt0 mb40">You Will Love Our Services</h3>
+    <p class="mb10 subtitle">Pourquoi Whatprice</p>
+    <h3 class="mt0 mb40">Devenez enfin Roi !</h3>
     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
     <p class="mb50">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
     <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>

@@ -28,7 +28,13 @@ class MagasinController extends Controller
      */
     public function create()
     {
+      if (Auth::user()->isAdmin()) {
         return view('magasins.create');
+      }
+      else {
+        return redirect('/');
+      }
+
     }
 
     /**
@@ -60,7 +66,12 @@ class MagasinController extends Controller
      */
     public function show(Magasin $magasin)
     {
+      if (Auth::user()->isAdmin()) {
         return view('magasins.show',['magasin' => $magasin]);
+      }
+      else {
+        return redirect('/');
+
     }
 
     /**
