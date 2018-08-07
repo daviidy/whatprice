@@ -175,9 +175,11 @@
             <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
-              @if ($loop->parent->first)
-              <span>Le moins cher !</span>
-              @endif
+              <div class="probootstrap-listing-category for-sale">
+                @if ($loop->parent->first)
+                <span>Le moins cher !</span>
+                @endif
+              </div>
             </div>
             <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
           </div>
