@@ -14,10 +14,12 @@ class ProduitController extends Controller
 
     public function home()
     {
-      $produits = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+
+      $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
       $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
       $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-      return view('bonjour', ['produits' => $produits, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+      return view('bonjour', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
 
     }
 
@@ -31,8 +33,12 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        $produits = Produit::orderby ('prix','asc')->paginate(30);
-        return view('produits.index', ['produits' => $produits]);
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
+
+      $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+      return view('produits.index', ['produits' => $produits, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
 
     }
 

@@ -127,7 +127,7 @@
           <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Smartphones</h3>
-            <p>{{$produits->count()}} produits</p>
+            <p>{{$smartphones->count()}} produits</p>
           </div>
         </a>
       </div>

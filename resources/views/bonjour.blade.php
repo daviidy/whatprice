@@ -99,7 +99,7 @@
           <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Smartphones</h3>
-            <p>{{$produits->count()}} produits</p>
+            <p>{{$smartphones->count()}} produits</p>
           </div>
         </a>
       </div>
@@ -163,25 +163,25 @@
       <h2 class="mt0 mb50 text-center">Quel est le smartphone le moins cher ?</h2>
     </div>
     <div class="row">
-      @foreach($produits as $produit)
-        @foreach($produit->magasins as $magasin)
+      @foreach($smartphones as $smartphone)
+        @foreach($smartphone->magasins as $magasin)
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
-            <img src="/img/photos/{{$produit->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+            <img src="/img/photos/{{$smartphone->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
+            <h2 class="probootstrap-card-heading"><a href="#">{{$smartphone->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+              <i class="icon-location2"></i> <span>{{$smartphone->marque}}</span>
             </div>
             <div class="probootstrap-listing-category for-sale">
               @if ($loop->parent->first)
               <span>Le moins cher !</span>
               @endif
             </div>
-            <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
+            <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
             <ul>
@@ -204,7 +204,7 @@
       </div>
         @endforeach
       @endforeach
-      {{ $produits->links() }}
+      {{ $smartphones->links() }}
   </div>
 
 
