@@ -233,7 +233,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .probootstrap-mobile-menu-active.show .probootstrap-main-nav li a {
-  color: #ffffff;
+  color: #000000;
 }
 
 .probootstrap-mobile-menu-active .probootstrap-main-nav li a {
@@ -1139,7 +1139,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .probootstrap-home-search .heading {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 10px;
@@ -1193,7 +1193,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 .probootstrap-home-search .probootstrap-field-group .probootstrap-fields .search-field {
   float: left;
-  width: 60%;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

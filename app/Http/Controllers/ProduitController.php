@@ -12,6 +12,36 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
 
+  public function smartphones()
+  {
+    $produits = Produit::orderby ('prix','asc')->paginate(30);
+
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.smartphones', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+  }
+
+  public function tablettes()
+  {
+    $produits = Produit::orderby ('prix','asc')->paginate(30);
+
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.tablettes', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+  }
+
+  public function ordinateurs()
+  {
+    $produits = Produit::orderby ('prix','asc')->paginate(30);
+
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.ordinateurs', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+  }
+
     public function home()
     {
       $produits = Produit::orderby ('prix','asc')->paginate(30);

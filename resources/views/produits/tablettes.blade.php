@@ -24,21 +24,21 @@
 
 
     <div class="row">
-      @foreach($details as $produit)
-        @foreach($produit->magasins as $magasin)
+      @foreach($details as $tablette)
+        @foreach($tablette->magasins as $magasin)
       <div class="col-md-4 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
-            <img src="/img/photos/{{$produit->image}}" class="img-responsive" alt="{{$produit->serie}}">
+            <img src="/img/photos/{{$tablette->image}}" class="img-responsive" alt="{{$tablette->serie}}">
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
+            <h2 class="probootstrap-card-heading"><a href="#">{{$tablette->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+              <i class="icon-location2"></i> <span>{{$tablette->marque}}</span>
             </div>
             <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-            <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
+            <div class="probootstrap-listing-price"><strong>{{$tablette->prix}} FCFA</strong></div>
           </div>
           <div class="probootstrap-card-extra">
             <ul>
@@ -61,7 +61,7 @@
       </div>
         @endforeach
       @endforeach
-      {{ $produits->links() }}
+      {{ $tablettes->links() }}
 
       @elseif(isset($message))
       <p>{{ $message }}</p>
@@ -69,21 +69,21 @@
       @else
 
       <div class="row">
-        @foreach($produits as $produit)
-          @foreach($produit->magasins as $magasin)
+        @foreach($tablettes as $tablette)
+          @foreach($tablette->magasins as $magasin)
         <div class="col-md-4 col-sm-6">
           <div class="probootstrap-card probootstrap-listing">
             <div class="probootstrap-card-media">
-              <img src="/img/photos/{{$produit->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+              <img src="/img/photos/{{$tablette->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
               <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
             </div>
             <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
+              <h2 class="probootstrap-card-heading"><a href="#">{{$tablette->serie}}</a></h2>
               <div class="probootstrap-listing-location">
-                <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+                <i class="icon-location2"></i> <span>{{$tablette->marque}}</span>
               </div>
               <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-              <div class="probootstrap-listing-price"><strong>{{$produit->prix}} FCFA</strong></div>
+              <div class="probootstrap-listing-price"><strong>{{$tablette->prix}} FCFA</strong></div>
             </div>
             <div class="probootstrap-card-extra">
               <ul>
@@ -106,7 +106,7 @@
         </div>
           @endforeach
         @endforeach
-        {{ $produits->links() }}
+        {{ $tablettes->links() }}
 
         @endif
 
@@ -116,7 +116,65 @@
 
 
 
+<section class="probootstrap-section">
+  <div class="container">
+    <div class="row heading">
+      <h2 class="mt0 mb50 text-center">Parcourez nos catégories</h2>
+    </div>
+    <div class="row probootstrap-gutter10">
+      <div class="col-md-6 col-sm-6">
+        <a href="#" class="probootstrap-hover-overlay">
+          <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <div class="probootstrap-text-overlay">
+            <h3>Smartphones</h3>
+            <p>{{$smartphones->count()}} produits</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <a href="#" class="probootstrap-hover-overlay">
+          <img src="/img/tablette.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <div class="probootstrap-text-overlay">
+            <h3>Tablettes</h3>
+            <p>{{$tablettes->count()}} produits</p>
+          </div>
+        </a>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
 
+      <div class="col-md-4 col-sm-6">
+        <a href="#" class="probootstrap-hover-overlay">
+          <img src="/img/ordi.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <div class="probootstrap-text-overlay">
+            <h3>Ordinateurs</h3>
+            <p>{{$ordinateurs->count()}} produits</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <a href="#" class="probootstrap-hover-overlay">
+          <img src="/img/tv.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <div class="probootstrap-text-overlay">
+            <h3>Télévision</h3>
+            <p>Bientôt disponible</p>
+          </div>
+        </a>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-md-4 col-sm-6">
+        <a href="#" class="probootstrap-hover-overlay">
+          <img src="/img/electro.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <div class="probootstrap-text-overlay">
+            <h3>Electro-ménagers</h3>
+            <p>Bientôt disponible</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END: section -->
 
 <section class="probootstrap-half reverse">
   <div class="image-wrap">

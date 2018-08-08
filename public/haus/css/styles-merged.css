@@ -7667,6 +7667,39 @@ a.pswp__share--download:hover {
     transition: all .3s ease;
   }
 
+  .background-vue{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 2px;
+    margin-right: 3px;
+    background: #72DAA9!important;
+    color: #fff!important;
+    transition: all .3s ease;
+  }
+
+  .background-node{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 2px;
+    margin-right: 3px;
+    background: #47C86D!important;
+    color: #fff!important;
+    transition: all .3s ease;
+  }
+
+  .background-laravel{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 2px;
+    margin-right: 3px;
+    background: #FFB7B5!important;
+    color: #fff!important;
+    transition: all .3s ease;
+  }
+
   .dropdown-menu{
     padding: 12px;
   }

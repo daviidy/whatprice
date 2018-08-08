@@ -2,34 +2,35 @@
 
 @section('content')
 
-<section class="probootstrap-slider flexslider">
+<section id="search-home" class="probootstrap-slider flexslider">
   <div class="probootstrap-wrap-banner">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
           <div class="probootstrap-home-search probootstrap-animate">
-            <form action="" method="post">
-              <h2 class="heading">Chercher un produit</h2>
+            <form action="/searchProduit" method="post">
+              <h2 class="heading">Quel produit cherchez-vous ? Nous vous trouvons le moins cher sur le marché</h2>
               <div class="probootstrap-field-group">
                 <div class="probootstrap-fields">
 
+                  @csrf
+
                   <div class="search-field">
                     <i class="icon-location2"></i>
-                    <input type="text" class="form-control" placeholder="Enter address, ZIP code, Neighborhoods">
+                    <input type="text" class="form-control" placeholder="Rechercher un produit">
                   </div>
-                  <div class="search-category">
+          <!--        <div class="search-category">
                     <i class="icon-chevron-down"></i>
                     <select name="#" id="" class="form-control">
-                      <option value="">For Rent</option>
-                      <option value="">For Sale</option>
+                      <option value="">Smartphone</option>
+                      <option value="">Ordinateur</option>
                     </select>
-                  </div>
+                  </div> -->
                 </div>
-                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Start Search</button>
+                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Chercher</button>
               </div>
             </form>
-            <p class="mb0 text-left"><small>A free HTML5 template by <a href="https://uicookies.com/">uicookies.com</a> under license <a href="https://uicookies.com/license">Creative Commons 3.0</a></small> </p>
           </div>
 
         </div>
@@ -44,6 +45,7 @@
 </section>
 <!-- END: slider  -->
 
+<!--
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
     <div class="row">
@@ -85,7 +87,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- END: section -->
 
 <section class="probootstrap-section">
@@ -150,9 +152,9 @@
 
 <section class="probootstrap-section probootstrap-bg" style="background-image: url(/img/products.jpg);">
   <div class="container text-center probootstrap-animate" data-animate-effect="fadeIn">
-    <h2 class="heading">Best Home &amp; Properties</h2>
-    <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-    <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
+    <h2 class="heading">Whatprice vous permet d'augmenter votre pouvoir d'achat</h2>
+    <p class="sub-heading">Pensez à un produit que vous voulez acheter, et utiliser notre moteur de recherche pour trouver le moins cher sur le marché</p>
+    <p><a href="#search-home" class="btn btn-primary mb10">Chercher maintenant</a></p>
   </div>
 </section>
 <!-- END: section -->
@@ -224,6 +226,7 @@
   </div>
 </section>
 
+<!--
 <section class="probootstrap-section">
   <div class="container">
     <div class="row heading">
@@ -278,10 +281,11 @@
       <div class="clearfix visible-lg-block visible-md-block"></div>
     </div>
   </div>
-</section>
+</section>  -->
 
 <!-- END: section -->
 
+<!--
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
     <div class="row heading">
@@ -338,6 +342,6 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 @endsection

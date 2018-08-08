@@ -27,6 +27,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('smartphones', 'ProduitController@smartphones')->name('smartphones');
+
+Route::get('ordinateurs', 'ProduitController@ordinateurs')->name('ordinateurs');
+
+Route::get('tablettes', 'ProduitController@tablettes')->name('tablettes');
+
 Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');

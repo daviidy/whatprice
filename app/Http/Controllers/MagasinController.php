@@ -71,6 +71,7 @@ class MagasinController extends Controller
       }
       else {
         return redirect('/');
+      }
 
     }
 

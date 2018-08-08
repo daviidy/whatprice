@@ -45,12 +45,20 @@
               <div class="dropdown-menu">
                 @guest
                 <span class="background-angular"></span>
-                <a class="dropdown-item" href="{{ route('produits.index') }}">Voir la liste des produits</a>
+                <a class="dropdown-item" href="{{ url('smartphones') }}">Smartphones</a> <br>
+                <span class="background-react"></span>
+                <a class="dropdown-item" href="{{ url('tablettes') }}">Tablettes</a><br>
+                <span class="background-vue"></span>
+                <a class="dropdown-item" href="{{ url('ordinateurs') }}">Ordinateurs</a>
                 @else
                 @if (Auth::user()->isMarchand() || Auth::user()->isAdmin())
                 <span class="background-angular"></span>
-                <a class="dropdown-item" href="{{ route('produits.index') }}">Voir la liste des produits</a><br>
+                <a class="dropdown-item" href="{{ url('smartphones') }}">Smartphones</a> <br>
                 <span class="background-react"></span>
+                <a class="dropdown-item" href="{{ url('tablettes') }}">Tablettes</a><br>
+                <span class="background-vue"></span>
+                <a class="dropdown-item" href="{{ url('ordinateurs') }}">Ordinateurs</a><br>
+                <span class="background-laravel"></span>
                 <a class="dropdown-item" href="{{ route('produits.create') }}">Créer un produit</a>
                 @endif
                 @endguest
@@ -74,15 +82,21 @@
                 @endguest
               </div>
             </li>
+            @auth
+            @if (Auth::user()->isAdmin())
             <li class="dropdown {{ Request::path() == 'categories.index' ? 'active' : "" }}">
               <a href="#" data-toggle="dropdown">
                   Catégories
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('categories.create') }}">Créer une catégorie</a><br>
-                <a class="dropdown-item" href="{{ route('categories.index') }}">Voir la liste des catégories</a>
+                <span class="background-react"></span>
+                <a class="dropdown-item" href="{{ route('categories.index') }}">Voir la liste des catégories</a><br>
+                <span class="background-angular"></span>
+                <a class="dropdown-item" href="{{ route('categories.create') }}">Créer une catégorie</a>
               </div>
             </li>
+            @endif
+            @endauth
             <li class="{{ Request::path() == 'contact' ? 'active' : "" }}"><a href="#">Travaillez avec nous</a></li>
             @guest
                 <li class="nav-item">
