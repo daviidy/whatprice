@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
 
-  public function smartphones()
+  public function smartphones() 
   {
     $produits = Produit::orderby ('prix','asc')->paginate(30);
 

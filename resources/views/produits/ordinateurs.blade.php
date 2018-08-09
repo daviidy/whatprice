@@ -4,9 +4,9 @@
 
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
-    <h1 class="text-center" style="margin-top: 3rem;">Liste de </h1><br>
+    <h1 class="text-center" style="margin-top: 3rem;">Liste des Ordinateurs </h1><br>
            <div id="custom-search-input">
-             <form action="/searchProduit" method="POST" role="search">
+             <form action="/searchOrdinateurs" method="POST" role="search">
                {{ csrf_field() }}
               <div class="input-group col-md-12">
                   <input type="text" name="q" class="  search-query form-control" placeholder="Chercher un produit" />
@@ -26,10 +26,10 @@
     <div class="row">
       @foreach($details as $ordinateur)
         @foreach($ordinateur->magasins as $magasin)
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
-            <img src="/img/photos/{{$ordinateur->image}}" class="img-responsive" alt="{{$ordinateur->serie}}">
+            <img style="margin: auto;" height="150" src="/img/photos/{{$ordinateur->image}}" class="img-responsive" alt="{{$ordinateur->serie}}">
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
@@ -37,8 +37,13 @@
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$ordinateur->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-            <div class="probootstrap-listing-price"><strong>{{$ordinateur->prix}} FCFA</strong></div>
+            <div class="probootstrap-listing-price"><strong>{{$ordinateur->prix}} FCFA</strong>
+              <div style="float: right;" class="probootstrap-listing-category for-sale">
+                @if ($loop->parent->first)
+                <span>Le moins cher !</span>
+                @endif
+              </div>
+            </div>
           </div>
           <div class="probootstrap-card-extra">
             <ul>
@@ -62,6 +67,7 @@
         @endforeach
       @endforeach
       {{ $ordinateurs->links() }}
+    </div>
 
       @elseif(isset($message))
       <p>{{ $message }}</p>
@@ -71,10 +77,10 @@
       <div class="row">
         @foreach($ordinateurs as $ordinateur)
           @foreach($ordinateur->magasins as $magasin)
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="probootstrap-card probootstrap-listing">
             <div class="probootstrap-card-media">
-              <img src="/img/photos/{{$ordinateur->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+              <img style="margin: auto;" height="150" src="/img/photos/{{$ordinateur->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
               <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
             </div>
             <div class="probootstrap-card-text">
@@ -82,8 +88,14 @@
               <div class="probootstrap-listing-location">
                 <i class="icon-location2"></i> <span>{{$ordinateur->marque}}</span>
               </div>
-              <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-              <div class="probootstrap-listing-price"><strong>{{$ordinateur->prix}} FCFA</strong></div>
+
+              <div class="probootstrap-listing-price"><strong>{{$ordinateur->prix}} FCFA</strong>
+                <div style="float: right;" class="probootstrap-listing-category for-sale">
+                  @if ($loop->parent->first)
+                  <span>Le moins cher !</span>
+                  @endif
+                </div>
+              </div>
             </div>
             <div class="probootstrap-card-extra">
               <ul>
@@ -107,10 +119,11 @@
           @endforeach
         @endforeach
         {{ $ordinateurs->links() }}
+        </div>
 
         @endif
 
-    </div>
+
   </div>
 </section>
 
@@ -142,7 +155,7 @@
       </div>
       <div class="clearfix visible-sm-block"></div>
 
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
           <img src="/img/ordi.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
@@ -151,7 +164,7 @@
           </div>
         </a>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
           <img src="/img/tv.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
@@ -161,7 +174,7 @@
         </a>
       </div>
       <div class="clearfix visible-sm-block"></div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <a href="#" class="probootstrap-hover-overlay">
           <img src="/img/electro.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">

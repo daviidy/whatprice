@@ -1026,9 +1026,9 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .probootstrap-card.probootstrap-listing .probootstrap-card-text .probootstrap-listing-price strong {
-  font-size: 30px;
-  font-weight: 300;
-  color: #2866AB;
+  font-size: 15px;
+font-weight: 900;
+color: #2866AB;
 }
 
 .probootstrap-card.probootstrap-listing .probootstrap-card-extra {

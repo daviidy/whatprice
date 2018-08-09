@@ -4,9 +4,9 @@
 
 <section class="probootstrap-section probootstrap-section-lighter">
   <div class="container">
-    <h1 class="text-center" style="margin-top: 3rem;">Liste de </h1><br>
+    <h1 class="text-center" style="margin-top: 3rem;">Liste des Smartphones </h1><br>
            <div id="custom-search-input">
-             <form action="/searchProduit" method="POST" role="search">
+             <form action="/searchSmartphones" method="POST" role="search">
                {{ csrf_field() }}
               <div class="input-group col-md-12">
                   <input type="text" name="q" class="  search-query form-control" placeholder="Chercher un produit" />
@@ -26,10 +26,10 @@
     <div class="row">
       @foreach($details as $smartphone)
         @foreach($smartphone->magasins as $magasin)
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <div class="probootstrap-card probootstrap-listing">
           <div class="probootstrap-card-media">
-            <img src="/img/photos/{{$smartphone->image}}" class="img-responsive" alt="{{$smartphone->serie}}">
+            <img style="margin: auto;" height="150" src="/img/photos/{{$smartphone->image}}" class="img-responsive" alt="{{$smartphone->serie}}">
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
@@ -37,8 +37,13 @@
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$smartphone->marque}}</span>
             </div>
-            <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-            <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong></div>
+            <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong>
+              <div style="float: right;" class="probootstrap-listing-category for-sale">
+                @if ($loop->parent->first)
+                <span>Le moins cher !</span>
+                @endif
+              </div>
+            </div>
           </div>
           <div class="probootstrap-card-extra">
             <ul>
@@ -61,7 +66,7 @@
       </div>
         @endforeach
       @endforeach
-      {{ $smartphones->links() }}
+    </div>
 
       @elseif(isset($message))
       <p>{{ $message }}</p>
@@ -71,19 +76,25 @@
       <div class="row">
         @foreach($smartphones as $smartphone)
           @foreach($smartphone->magasins as $magasin)
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="probootstrap-card probootstrap-listing">
             <div class="probootstrap-card-media">
-              <img src="/img/photos/{{$smartphone->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+              <img style="margin: auto;" height="150" src="/img/photos/{{$smartphone->image}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
               <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
             </div>
             <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading"><a href="#">{{$smartphone->serie}}</a></h2>
+              <h2 class="probootstrap-card-heading"><a href="{{route('produits.show', $smartphone)}}">{{$smartphone->serie}}</a></h2>
               <div class="probootstrap-listing-location">
                 <i class="icon-location2"></i> <span>{{$smartphone->marque}}</span>
               </div>
-              <div class="probootstrap-listing-category for-sale"><span>Le moins cher !</span></div>
-              <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong></div>
+
+              <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong>
+                <div style="float: right;" class="probootstrap-listing-category for-sale">
+                  @if ($loop->parent->first)
+                  <span>Le moins cher !</span>
+                  @endif
+                </div>
+              </div>
             </div>
             <div class="probootstrap-card-extra">
               <ul>
@@ -107,10 +118,11 @@
           @endforeach
         @endforeach
         {{ $smartphones->links() }}
+        </div>
 
         @endif
 
-    </div>
+
   </div>
 </section>
 

@@ -20,7 +20,7 @@
   </head>
   <body>
 
-  <div class="probootstrap-loader"></div>
+<!--  <div class="probootstrap-loader"></div> -->
 
   <header role="banner" class="probootstrap-header">
     <!-- START: header -->
