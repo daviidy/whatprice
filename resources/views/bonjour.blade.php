@@ -97,7 +97,7 @@
     </div>
     <div class="row probootstrap-gutter10">
       <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
+        <a href="{{ url('smartphones') }}" class="probootstrap-hover-overlay">
           <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Smartphones</h3>
@@ -106,7 +106,7 @@
         </a>
       </div>
       <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
+        <a href="{{ url('tablettes') }}" class="probootstrap-hover-overlay">
           <img src="/img/tablette.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Tablettes</h3>
@@ -117,7 +117,7 @@
       <div class="clearfix visible-sm-block"></div>
 
       <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
+        <a href="{{ url('ordinateurs') }}" class="probootstrap-hover-overlay">
           <img src="/img/ordi.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
           <div class="probootstrap-text-overlay">
             <h3>Ordinateurs</h3>

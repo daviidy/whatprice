@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categorie;
+use App\Produit;
 use Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -16,8 +17,11 @@ class CategorieController extends Controller
      */
     public function index()
     {
+      $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
         $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
-        return view('categories.index', ['categories' => $categories]);
+        return view('categories.index', ['categories' => $categories, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
 
     }
 
