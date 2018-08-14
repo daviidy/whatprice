@@ -152,36 +152,33 @@
     <div class="row mb60">
       <div class="col-md-3">
         <div class="probootstrap-footer-widget">
-          <h4 class="heading">About Haus.</h4>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          <p><a href="#">Read more...</a></p>
+          <h4 class="heading">A propos.</h4>
+          <p>Vous avez besoin de connaitre les différents prix d'un produit sur le marché, pour augmenter votre pouvoir d'achat ? Utilisez Whatprice </p>
+          <p><a href="http://whatprice.rikudotech.com/#search-home">Chercher un produit</a></p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="probootstrap-footer-widget probootstrap-link-wrap">
-          <h4 class="heading">Quick Links</h4>
+          <h4 class="heading">Catégories des produits</h4>
           <ul class="stack-link">
-            <li><a href="#">Property Listing</a></li>
-            <li><a href="#">Rent Properties</a></li>
-            <li><a href="#">Sell Properties</a></li>
-            <li><a href="#">Agents</a></li>
-            <li><a href="#">Testimonial</a></li>
+            <li><a href="{{ url('smartphones') }}">Smartphones <small>({{$smartphones->count()}} produits)</small></a></li>
+            <li><a href="{{ url('tablettes') }}">Tablettes <small>({{$tablettes->count()}} produits)</small></a></li>
+            <li><a href="{{ url('ordinateurs') }}">Ordinateurs <small>({{$ordinateurs->count()}} produits)</small></a></li>
+            <li><a href="#">Télévision <small>(Bientôt disponible)</small></a></li>
+            <li><a href="#">Electro-ménagers <small>(Bientôt disponible)</small></a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-3">
         <div class="probootstrap-footer-widget">
-          <h4 class="heading">Popular Cities</h4>
+          <h4 class="heading">Travaillez avec Whatprice</h4>
           <ul class="stack-link">
-            <li><a href="#">New York <small>(320 properties)</small></a></li>
-            <li><a href="#">San Francisco <small>(294 properties)</small></a></li>
-            <li><a href="#">Brooklyn <small>(300 properties)</small></a></li>
-            <li><a href="#">Chicago <small>(268 properties)</small></a></li>
-            <li><a href="#">Los Angeles <small>(342 properties)</small></a></li>
+            <li><a href="#">Carrières</a></li>
+            <li><a href="#">Marchand</a></li>
           </ul>
         </div>
       </div>
-      <div class="col-md-3">
+<!--      <div class="col-md-3">
         <div class="probootstrap-footer-widget probootstrap-link-wrap">
           <h4 class="heading">Subscribe</h4>
           <p>Far far away behind the word mountains far from.</p>
@@ -192,12 +189,12 @@
             </div>
           </form>
         </div>
-      </div>
+      </div>  -->
     </div>
     <div class="row copyright">
       <div class="col-md-6">
         <div class="probootstrap-footer-widget">
-          <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Haus</a>. Designed by <a href="https://uicookies.com/">uicookies.com</a> <br> Demo Photos from <a href="https://pixabay.com/">Pixabay</a> &amp; <a href="https://unsplash.com/">Unsplash</a></p>
+          <p>&copy; 2018 <a href="https://whatprice.rikudotech.com/">Whatprice</a>. Par <a href="https://rikudotech.com/">Rikudo Technologies</a>
         </div>
       </div>
       <div class="col-md-6">

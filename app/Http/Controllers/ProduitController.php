@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
 
-  public function smartphones() 
+  public function smartphones()
   {
     $produits = Produit::orderby ('prix','asc')->paginate(30);
 
@@ -128,14 +128,9 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-      if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
         $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
         $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
         return view('produits.show', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins]);
-      }
-      else {
-        return redirect('/');
-      }
     }
 
     /**
