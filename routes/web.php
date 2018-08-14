@@ -21,6 +21,8 @@ Route::resource('produits','ProduitController');
 Route::resource('categories','CategorieController');
 Route::resource('magasins','MagasinController');
 
+Route::post('/searchProduit', 'SearchController@searchProduit');
+
 Route::post('/searchSmartphones', 'SearchController@searchSmartphones');
 
 Route::post('/searchTablettes', 'SearchController@searchTablettes');
