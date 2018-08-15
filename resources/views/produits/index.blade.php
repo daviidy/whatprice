@@ -33,7 +33,7 @@
             <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
           </div>
           <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading"><a href="#">{{$produit->serie}}</a></h2>
+            <h2 class="probootstrap-card-heading"><a href="{{route('produits.show', $produit)}}">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
             </div>

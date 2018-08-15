@@ -190,7 +190,7 @@ class ProduitController extends Controller
     public function destroy(Produit $produit)
     {
         $produit->delete();
-        return redirect('produits')->with('status', 'Produit supprimé avec succès');;
+        return redirect('/')->with('status', 'Produit supprimé avec succès');;
     }
 
 

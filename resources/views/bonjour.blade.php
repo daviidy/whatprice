@@ -178,6 +178,16 @@
             <div class="probootstrap-listing-location">
               <i class="icon-location2"></i> <span>{{$smartphone->marque}}</span>
             </div>
+            @auth
+            @if (Auth::user()->isMarchand() || Auth::user()->isAdmin())
+            <!--BOUTON MODIFIERr-->
+
+              <div class="probootstrap-card-text" style="margin-top: -79px; margin-left: 160px; ">
+              <a href="{{route('produits.edit', $smartphone)}}" style=" font-size: 12px; color: green ; font-weight: 500;">Modifier</a>
+            </div>
+              <!---->
+              @endif
+              @endauth
 
             <div class="probootstrap-listing-price"><strong>{{$smartphone->prix}} FCFA</strong>
               <div style="float: right;" class="probootstrap-listing-category for-sale">

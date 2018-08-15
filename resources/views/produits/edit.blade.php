@@ -8,8 +8,9 @@
   <div class="container-login100">
     <div class="wrap-login100">
       <div class="login100-pic js-tilt" data-tilt>
-        <img src="/formcreate/images/img-01.png" alt="IMG">
+        <img src="/img/photos/{{$produit->image}}" alt="IMG">
       </div>
+
 
       <form method="post" enctype="multipart/form-data" action="{{ url('produits', $produit) }}" class="login100-form validate-form">
         <span class="login100-form-title">
@@ -82,11 +83,48 @@
             Allez à la page d'accueil
             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
           </a>
+          @auth
+          @if (Auth::user()->isAdmin())
+          <br>
+          <a href="" style="color: #EB5A5A" data-toggle="modal" data-target="#myModal">Ou supprimer ce produit</a>
+          @endif
+          @endauth
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 style="font-size: 1.3rem;" class="modal-title">Attention, cette action est irréversible !</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Êtes-vous sûrs de vouloir supprimer ce produit ?
+                <form action="{{ route('produits.destroy', $produit) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <button class="btn btn-danger" type="submit">Supprimer ce produit</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- fin modal -->
 
 
 
