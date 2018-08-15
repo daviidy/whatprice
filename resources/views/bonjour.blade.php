@@ -18,7 +18,7 @@
 
                   <div class="search-field">
                     <i class="icon-location2"></i>
-                    <input type="text" class="form-control" placeholder="Rechercher un produit">
+                    <input name="q" type="text" class="form-control" placeholder="Rechercher un produit" required>
                   </div>
           <!--        <div class="search-category">
                     <i class="icon-chevron-down"></i>

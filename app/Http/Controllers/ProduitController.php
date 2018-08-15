@@ -59,7 +59,7 @@ class ProduitController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response 
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -141,7 +141,14 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
-        return view('produits.edit',['produit'=> $produit]);
+      if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
+        $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
+        $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
+        return view('produits.edit', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins]);
+      }
+      else {
+        return redirect('/');
+      }
     }
 
     /**
