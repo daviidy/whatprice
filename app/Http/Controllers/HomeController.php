@@ -29,8 +29,8 @@ class HomeController extends Controller
       $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
       $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
       $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-      return view('produits.index', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+      return view('bonjour  ', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
     }
 
-    
+
 }

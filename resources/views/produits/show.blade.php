@@ -1,5 +1,7 @@
 @extends('layouts.single-product')
 
+@section('title', $produit->serie)
+
 @section('content')
 
 
