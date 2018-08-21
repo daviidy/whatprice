@@ -1,4 +1,5 @@
 @extends('layouts.menu')
+@section('title', 'Trouvez le produit le moins cher sur le marché')
 
 @section('content')
 
@@ -28,7 +29,7 @@
                     </select>
                   </div> -->
                 </div>
-                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Chercher</button>
+                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i>Chercher</button>
               </div>
             </form>
           </div>
