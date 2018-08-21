@@ -7,6 +7,7 @@
     <meta name="description" content="Trouvez le produit le moins cher sur le marché !">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <link rel="stylesheet" href="/haus/css/styles-merged.css">
     <link rel="stylesheet" href="/haus/css/style.css">
@@ -19,8 +20,6 @@
     <![endif]-->
 
   <link rel="stylesheet" type="text/css" href="/haus/css/show.css">
-
-  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
   <style type="text/css" id="#jarallax-clip-0">#jarallax-container-0 {
    clip: rect(0 1280px 491px 0);
