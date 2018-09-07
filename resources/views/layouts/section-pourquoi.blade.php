@@ -10,6 +10,6 @@
     <p>La recherche des Smartphones, Tablettes et ordinateurs de Whatprice permet aux utilisateurs de comparer les prix de ces produits en seulement quelques clics afin de déterminer où les trouver et comment contacter leur fournisseur.</p>
     <p class="mb50">Whatprice est utilisé pour comparer des offres dans toutes les grandes surfaces et magasins revendeurs des appareils de communication modernes dans la ville d’Abidjan, Côte d’Ivoire.</p>
     <p class="mb50">Obtenir des informations pour le produit que vous désirez acheter et vous pouvez trouver sur Whatprice votre appareil et sa localisation rapidement et facilement.</p>
-    <p><a href="http://whatprice.rikudotech.com/#search-home" class="btn btn-primary mb10">Chercher un produit</a></p>
+    <p><a href="#search-home" class="btn btn-primary mb10">Chercher un produit</a></p>
   </div>
 </section>

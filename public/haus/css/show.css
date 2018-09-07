@@ -1,0 +1,101 @@
+
+.show-section{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding-top: 15px;
+  padding-bottom: 90px;
+  background-color: #ffffff;
+  display: table;
+  width: 100%;
+  margin-top: 100px;
+  color: #000000;
+}
+
+.serie-produit {
+  font-style: normal;
+ 
+  font-size: 3rem;
+  width: 110%;
+  margin-top: 15px;
+	font-size: 54px;
+	font-weight: 700;
+}
+
+.text-serie{
+  margin-left: -40px;
+}
+
+.image-produit {
+	max-width: 400px;    
+    min-width: 220px;
+    margin-left: 75px;
+	
+
+}
+
+.col-md-6 {
+	max-width: 100%;
+
+}
+.images{
+	
+    max-width: 80%;
+    min-width: 300px;
+    
+
+}
+
+.container1{
+	margin-top: 80px;
+	
+}
+.btn{
+	position: relative;
+  font-weight: 500;
+  border-width: 1px;
+  font-style: normal;
+  letter-spacing: normal;
+  white-space: normal;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: .3s,.3s,.3s,2s;
+  transition-timing-function: ease-in-out;
+  padding: 0.719rem 1.5rem;
+  border-radius: 3px;
+  display: inline-flex;
+  justify-content: center;
+  word-break: break-word;
+  background-color: #2586b5 !important;
+  border-color: #2586b5 !important;
+  color: #ffffff !important;
+}
+
+.bouton{
+	padding-bottom:20px;
+}
+
+
+.prix-produit{
+	font-size: 50px;
+	
+  color: #000000;
+}
+
+
+@media screen and (max-width: 700px){
+	.serie-produit {
+		font-size: 42px;
+		
+	}
+	.prix-produit{
+		font-size: 35px;
+		font-weight: 700px;
+
+
+	}
+	.image-produit{
+		max-width: 300px;
+    margin-left: 0;
+	}
+  .text-serie{
+    margin-left: 0;
+  }
+}

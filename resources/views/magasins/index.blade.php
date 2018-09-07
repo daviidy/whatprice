@@ -35,6 +35,7 @@
     </div>
     <div class="row">
       @foreach($magasins as $magasin)
+
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-card probootstrap-person text-left">
           <div class="probootstrap-card-media">
@@ -42,8 +43,17 @@
           </div>
           <div class="probootstrap-card-text">
             <h2 class="probootstrap-card-heading mb0">{{$magasin->nom_magasin}}</h2>
+            @if($magasin->localisation === '')
+              <p><small><a href="https://{{$magasin->site}}" target="_blank">{{$magasin->site}}</a></small></p>
+            @else
             <p><small>{{$magasin->localisation}}</small></p>
+            @endif
             <p><a href="#">{{$magasin->contact}}</a></p>
+            @auth
+            @if(Auth::user()->isAdmin())
+            <p style="display: none;"><a href="{{ route('categories.index') }}">Voir leurs offres</a></p>
+            @endif
+            @endauth
           </div>
         </div>
       </div>
@@ -52,6 +62,6 @@
   </div>
 </section>
 
-@include('layouts.section-pourquoi')
+
 
 @endsection

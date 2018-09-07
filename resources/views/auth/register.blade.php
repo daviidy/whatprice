@@ -11,15 +11,7 @@
           S'inscrire avec
         </span>
 
-        <a href="#" class="btn-face m-b-20">
-          <i class="fa fa-facebook-official"></i>
-          Facebook
-        </a>
-
-        <a href="#" class="btn-google m-b-20">
-          <img src="/registration/images/icons/icon-google.png" alt="GOOGLE">
-          Google
-        </a>
+       
 
 
         <div class="p-t-31 p-b-9">

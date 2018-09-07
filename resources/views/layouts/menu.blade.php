@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,15 +8,26 @@
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="haus/css/styles-merged.css">
-    <link rel="stylesheet" href="haus/css/style.css">
-    <link rel="stylesheet" href="haus/css/custom.css">
+    <link rel="stylesheet" href="/haus/css/styles-merged.css">
+    <link rel="stylesheet" href="/haus/css/style.css">
+    <link rel="stylesheet" href="/haus/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/formcreate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="/haus/css/show.css">
+  
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
+  <style type="text/css" id="#jarallax-clip-0">#jarallax-container-0 {
+   clip: rect(0 1280px 491px 0);
+   clip: rect(0, 1280px, 491px, 0);
+}</style>
+
+
   </head>
   <body>
 
@@ -38,10 +49,25 @@
         <nav role="navigation" class="probootstrap-nav hidden-xs">
           <ul class="probootstrap-main-nav">
             <li class="{{ Request::path() == 'home' ? 'active' : "" }}"><a href="/">Accueil</a></li>
+            @guest
             <li class="dropdown {{ Request::path() == 'produits.index' ? 'active' : "" }}">
               <a href="#" data-toggle="dropdown">
                 Produits
               </a>
+            @else
+            @if (Auth::user()->isMarchand())
+              <li class="dropdown {{ Request::path() == 'produits.index' ? 'active' : "" }}">
+              <a href="#" data-toggle="dropdown">
+                Mon Catalogue
+              </a>
+              @endif
+            @if (Auth::user()->isAdmin())
+              <li class="dropdown {{ Request::path() == 'produits.index' ? 'active' : "" }}">
+              <a href="#" data-toggle="dropdown">
+                Produits
+              </a>
+              @endif
+              @endguest
               <div class="dropdown-menu">
                 @guest
                 <span class="background-angular"></span>
@@ -51,7 +77,7 @@
                 <span class="background-vue"></span>
                 <a class="dropdown-item" href="{{ url('ordinateurs') }}">Ordinateurs</a>
                 @else
-                @if (Auth::user()->isMarchand() || Auth::user()->isAdmin())
+                @if (Auth::user()->isMarchand())
                 <span class="background-angular"></span>
                 <a class="dropdown-item" href="{{ url('smartphones') }}">Smartphones</a> <br>
                 <span class="background-react"></span>
@@ -59,15 +85,42 @@
                 <span class="background-vue"></span>
                 <a class="dropdown-item" href="{{ url('ordinateurs') }}">Ordinateurs</a><br>
                 <span class="background-laravel"></span>
-                <a class="dropdown-item" href="{{ route('produits.create') }}">Créer un produit</a>
+                <a class="dropdown-item" href="{{ route('produits.create') }}">Ajouter une offre</a>
+                @endif
+                @if(Auth::user()->isAdmin())
+                  <span class="background-vue"></span>
+                <a class="dropdown-item" href="{{ route('categories.index') }}">Voir les offres</a><br>
+                <span class="background-laravel"></span>
+                <a class="dropdown-item" href="{{ route('produits.create') }}">Ajouter une offre</a>
                 @endif
                 @endguest
               </div>
             </li>
+
+            
+            @guest
             <li class="dropdown {{ Request::path() == 'magasins.index' ? 'active' : "" }}">
+              <a href="{{route('magasins.index')}}">
+                Magasins
+              </a>
+              <li class="dropdown {{ Request::path() == 'categories.index' ? 'active' : "" }}">
+              <a href="{{route('categories.index')}}" >
+                  Catégories
+            @else
+            @if (Auth::user()->isMarchand())
+              <li class="dropdown {{ Request::path() == 'magasins.index' ? 'active' : "" }}" ">
+                <a href="#" data-toggle="dropdown" style="display: none;">
+                Magasins
+                </a>
+              @else
+              @if (Auth::user()->isAdmin())
+              <li class="dropdown {{ Request::path() == 'magasins.index' ? 'active' : "" }}">
               <a href="#" data-toggle="dropdown">
                 Magasins
               </a>
+                @endif
+              @endif
+            @endguest
               <div class="dropdown-menu">
                 @guest
                 <span class="background-angular"></span>
@@ -84,6 +137,7 @@
             </li>
             @auth
             @if (Auth::user()->isAdmin())
+
             <li class="dropdown {{ Request::path() == 'categories.index' ? 'active' : "" }}">
               <a href="#" data-toggle="dropdown">
                   Catégories
@@ -127,8 +181,8 @@
           </ul>
           <div class="extra-text visible-xs">
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-            <h5>Address</h5>
-            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <h5>Adresse</h5>
+            <p>Koumassi quartier Fanny</p>
             <h5>Connect</h5>
             <ul class="social-buttons">
               <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -154,7 +208,7 @@
         <div class="probootstrap-footer-widget">
           <h4 class="heading">A propos.</h4>
           <p>Vous avez besoin de connaitre les différents prix d'un produit sur le marché, pour augmenter votre pouvoir d'achat ? Utilisez Whatprice </p>
-          <p><a href="http://whatprice.rikudotech.com/#search-home">Chercher un produit</a></p>
+          <p><a href="#search-home">Chercher un produit</a></p>
         </div>
       </div>
       <div class="col-md-3">
@@ -197,15 +251,7 @@
           <p>&copy; 2018 <a href="https://whatprice.rikudotech.com/">Whatprice</a>. Par <a href="https://rikudotech.com/">Rikudo Technologies</a>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="probootstrap-footer-widget right">
-          <ul class="probootstrap-footer-social">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-instagram2"></i></a></li>
-          </ul>
-        </div>
-      </div>
+      
     </div>
   </div>
 </footer>
@@ -215,9 +261,12 @@
   </div>
 
 
-  <script src="haus/js/scripts.min.js"></script>
-  <script src="haus/js/main.min.js"></script>
-  <script src="haus/js/custom.js"></script>
+  <script src="/haus/js/scripts.min.js"></script>
+  <script src="/haus/js/main.min.js"></script>
+  <script src="/haus/js/custom.js"></script>
+
+  
+
 
   </body>
 </html>

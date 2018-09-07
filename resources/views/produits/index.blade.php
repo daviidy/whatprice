@@ -22,6 +22,8 @@
           @if(isset($details))
           <p> Les résultats de recherche pour <b> {{ $query }} </b> sont :</p>
 
+   
+    
 
     <div class="row">
       @foreach($details as $produit)
@@ -35,14 +37,14 @@
           <div class="probootstrap-card-text">
             <h2 class="probootstrap-card-heading"><a href="{{route('produits.show', $produit)}}">{{$produit->serie}}</a></h2>
             <div class="probootstrap-listing-location">
-              <i class="icon-location2"></i> <span>{{$produit->marque}}</span>
+               <img src="/img/facture.png" style="width: 42px;  margin-top: -9px;"> <span>{{$produit->marque}}</span>
             </div>
 
             @auth
             @if (Auth::user()->isMarchand() || Auth::user()->isAdmin())
             <!--BOUTON MODIFIERr-->
 
-              <div class="probootstrap-card-text" style="margin-top: -79px; margin-left: 160px; ">
+              <div class="probootstrap-card-text" id="editer">
               <a href="{{route('produits.edit', $produit)}}" style=" font-size: 12px; color: green ; font-weight: 500;">Modifier</a>
             </div>
               <!---->
@@ -62,6 +64,16 @@
                 {{$magasin->nom_magasin}}
                 <span>Magasin</span>
               </li>
+               @if($magasin->localisation === '')
+              <li style=" margin-left: -13px !important;">
+                <a href="https://{{$magasin->site}}" target="_blank">{{$magasin->site}}</a>
+                <span>Site</span>
+              </li>
+              <li style="margin-left: 10px;">
+                {{$magasin->contact}}
+                <span>Contact</span>
+              </li>
+              @else
               <li>
                 {{$magasin->localisation}}
                 <span>Lieu</span>
@@ -70,6 +82,7 @@
                 {{$magasin->contact}}
                 <span>Contact</span>
               </li>
+              @endif
             </ul>
           </div>
         </div>
@@ -90,65 +103,7 @@
 
 
 
-<section class="probootstrap-section">
-  <div class="container">
-    <div class="row heading">
-      <h2 class="mt0 mb50 text-center">Parcourez nos catégories</h2>
-    </div>
-    <div class="row probootstrap-gutter10">
-      <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/smartphone.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Smartphones</h3>
-            <p>{{$smartphones->count()}} produits</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/tablette.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Tablettes</h3>
-            <p>{{$tablettes->count()}} produits</p>
-          </div>
-        </a>
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/ordi.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Ordinateurs</h3>
-            <p>{{$ordinateurs->count()}} produits</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/tv.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Télévision</h3>
-            <p>Bientôt disponible</p>
-          </div>
-        </a>
-      </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-md-4 col-sm-6">
-        <a href="#" class="probootstrap-hover-overlay">
-          <img src="/img/electro.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-          <div class="probootstrap-text-overlay">
-            <h3>Electro-ménagers</h3>
-            <p>Bientôt disponible</p>
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- END: section -->
+@include('layouts.section-categories')
 
 @include('layouts.section-pourquoi')
 

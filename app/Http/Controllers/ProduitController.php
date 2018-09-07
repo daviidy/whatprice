@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Produit;
 use App\Categorie;
 use App\Magasin;
@@ -12,49 +12,86 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
 
-  public function smartphones()
+   public function smartphones() 
   {
-    $produits = Produit::orderby ('prix','asc')->paginate(30);
-
+     if (Auth::user())
+      {
+         $user = Auth::user()->name;
+         $produits = Produit::orderby ('prix','asc')->paginate(30);
     $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
     $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
     $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-    return view('produits.smartphones', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+  
+    return view('produits.smartphones', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs, 'user' => $user]);  
+    }
+    else{
+    $produits = Produit::orderby ('prix','asc')->paginate(30);
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.smartphones', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);  
+    }
   }
 
   public function tablettes()
   {
-    $produits = Produit::orderby ('prix','asc')->paginate(30);
-
+    if (Auth::user())
+      {
+         $user = Auth::user()->name;
+         $produits = Produit::orderby ('prix','asc')->paginate(30);
     $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
     $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
     $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-    return view('produits.tablettes', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+    return view('produits.tablettes', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs, 'user' => $user]);  
+    }
+    else{
+        $produits = Produit::orderby ('prix','asc')->paginate(30);
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.tablettes', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);  
+    }
   }
 
   public function ordinateurs()
   {
-    $produits = Produit::orderby ('prix','asc')->paginate(30);
-
+   if (Auth::user())
+      {
+         $user = Auth::user()->name;
+         $produits = Produit::orderby ('prix','asc')->paginate(30);
     $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
     $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
     $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-    return view('produits.ordinateurs', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
-  }
+    return view('produits.ordinateurs', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs, 'user' => $user]);  
+    }
+    else{
+        $produits = Produit::orderby ('prix','asc')->paginate(30);
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.ordinateurs', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);  
+    }
+}
+
+
 
     public function home()
     {
-      $produits = Produit::orderby ('prix','asc')->paginate(30);
+        if (Auth::user())
+      {
+         $user = Auth::user()->name;
 
+    }
+      $produits = Produit::orderby ('prix','asc')->paginate(30);
       $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
-      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
-      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-      return view('bonjour', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+      $smartphoneshomes = Produit::orderby ('prix','asc')->whereRaw("(serie LIKE 'Iphone%') OR (serie LIKE 'Galaxy%') ")->paginate(8);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('bonjour', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs, 'smartphoneshomes'=>$smartphoneshomes]);
 
     }
 
-
-
+  
 
     /**
      * Display a listing of the resource.
@@ -63,14 +100,28 @@ class ProduitController extends Controller
      */
     public function index()
     {
-      $produits = Produit::orderby ('prix','asc')->paginate(30);
-
-      $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
-      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
-      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
-      return view('produits.index', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
+       
+     if (Auth::user())
+      {
+         $user = Auth::user()->name;
+         $produits = Produit::orderby ('prix','asc')->whereRaw("(serie LIKE 'Iphone%') OR (serie LIKE 'Galaxy%') ")->paginate(8);
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.index', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs, 'user' => $user]);  
+    }
+    else{
+        $produits = Produit::orderby ('prix','asc')->paginate(30);
+    $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+    $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+    $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
+    return view('produits.index', ['produits' => $produits, 'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);  
+    }
+    
 
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -79,15 +130,9 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
-          $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
-          $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
-          return view('produits.create', ['categories' => $categories, 'magasins' => $magasins]);
-        }
-        else {
-          return redirect('/');
-        }
-
+        $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
+        $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
+        return view('produits.create', ['categories' => $categories, 'magasins' => $magasins]);
     }
 
     /**
@@ -127,10 +172,14 @@ class ProduitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Produit $produit)
+
     {
+        $smartphones = Produit::orderby ('prix','asc')->where('categorie_id', '1')->paginate(30);
+      $tablettes = Produit::orderby ('prix','asc')->where('categorie_id', '2')->paginate(30);
+      $ordinateurs = Produit::orderby ('prix','asc')->where('categorie_id', '3')->paginate(30);
         $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
         $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
-        return view('produits.show', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins]);
+        return view('produits.show', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins,'smartphones' => $smartphones, 'tablettes' => $tablettes, 'ordinateurs' => $ordinateurs]);
     }
 
     /**
@@ -142,6 +191,7 @@ class ProduitController extends Controller
     public function edit(Produit $produit)
     {
       if (Auth::user()->isMarchand() || Auth::user()->isAdmin()) {
+        
         $categories = Categorie::orderby ('nom_categorie','asc')->paginate(30);
         $magasins = Magasin::orderby ('nom_magasin','asc')->paginate(30);
         return view('produits.edit', ['produit' => $produit, 'categories' => $categories, 'magasins' => $magasins]);
@@ -190,7 +240,7 @@ class ProduitController extends Controller
     public function destroy(Produit $produit)
     {
         $produit->delete();
-        return redirect('/')->with('status', 'Produit supprimé avec succès');;
+        return redirect('produits')->with('status', 'Produit supprimé avec succès');;
     }
 
 

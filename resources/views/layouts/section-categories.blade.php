@@ -1,4 +1,4 @@
-<section class="probootstrap-section">
+<<section class="probootstrap-section">
   <div class="container">
     <div class="row heading">
       <h2 class="mt0 mb50 text-center">Parcourez nos catégories</h2>

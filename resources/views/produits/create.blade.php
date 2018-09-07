@@ -21,7 +21,7 @@
           <input class="input100" type="text" name="marque" placeholder="Exemple : Apple">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
-            <i class="fa fa-apple" aria-hidden="true"></i>
+            <i class="fa fa-apple" aria-hidden="true"><br><br></i><i class="fa fa-android" aria-hidden="true"></i>
           </span>
         </div>
 
