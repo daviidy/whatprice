@@ -94,7 +94,7 @@
               <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
             </div>
             <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading"><a href="{{route('produits.show', $tablette)}}">{{$ordinateur->serie}}</a></h2>
+              <h2 class="probootstrap-card-heading"><a href="{{route('produits.show', $ordinateur)}}">{{$ordinateur->serie}}</a></h2>
               <div class="probootstrap-listing-location">
                 <i class="icon-location2"></i> <span>{{$ordinateur->marque}}</span>
               </div>
